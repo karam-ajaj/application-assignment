@@ -1,0 +1,16 @@
+   71  cd Desktop/
+   72  mkdir HYF
+   73  cd HYF/
+   74  touch test
+   75  ls
+   76  mv test .test
+   77  ls
+   78  ls -a
+   79  mkdir -p these/folders/are/just/for/fun
+   80  cd these/folders/are/just/for/fun/
+   81  echo "test" > fun
+   82  echo "another test" >> fun
+   83  wc -c fun
+   84  echo -n "test" > fun
+   85  echo "another test" >> fun
+   86  cat fun 
