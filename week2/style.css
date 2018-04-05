@@ -1,0 +1,230 @@
+
+h1{
+    font-size: 2em;
+    text-align: center;
+}
+
+
+h2{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+
+/* phone */
+@media screen and (min-width: 0px) and (max-width:479px) {
+
+    #grid-floats li:nth-child(1n)
+    {
+        margin: 0%;
+        padding: 0%;
+        border: 0px;
+        float: left;
+        text-align: center;
+        height: 50vh;
+        background-color: blue;
+        list-style: none;
+    }
+    
+    #grid-floats li:nth-child(1)
+    {
+        width: 100%;
+    }
+    
+    #grid-floats li:nth-child(n+2)
+    {
+        width: 50%;
+    }
+    
+    
+    #grid-floats .grid-item img {
+        width: 50%;
+    }
+    
+    }
+    
+    
+
+/* tablet */
+    @media screen and (min-width: 479px) and (max-width: 767px)
+    {
+
+        #grid-floats li:nth-child(1n)
+        {
+            margin: 0%;
+            padding: 0%;
+            border: 0px;
+            float: left;
+            text-align: center;
+            height: 50vh;
+            background-color: red;
+            list-style: none;
+        }
+        
+        #grid-floats li:nth-child(1)
+        {
+            width: 50%;
+        }
+
+
+        #grid-floats li:nth-child(2)
+        {
+            width: 50%;
+        }
+        
+        #grid-floats li:nth-child(n+3)
+        {
+            width: 33%;
+        }
+        
+        
+        #grid-floats .grid-item img {
+            width: 33%;
+        }
+        
+        }
+        
+        
+
+
+/* computer */
+        @media screen and (min-width: 767px) and (max-width: 1500px) {
+
+            #grid-floats li:nth-child(1n)
+            {
+                margin: 0%;
+                padding: 0%;
+                border: 0px;
+                float: left;
+                text-align: center;
+                height: 50vh;
+                background-color: green;
+                list-style: none;
+            }
+            
+            #grid-floats li:nth-child(1)
+            {
+                width: 50%;
+            }
+            
+            #grid-floats li:nth-child(n+2)
+            {
+                width: 25%;
+            }
+            
+            /*#grid-floats li:nth-child(15)
+            {
+                clear: both;
+                display: block;
+            }
+            */
+            #grid-floats .grid-item img {
+                width: 25%;
+            }
+            #grid-floats:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            }
+            
+            
+/* flex */                        
+
+/*
+#grid-flex {
+display: grid;
+grid-template-columns: 50% 1fr 1fr;
+grid-template-rows:20% 20% 20% 20% 20% ;
+grid-row-start: 2;
+grid-row-end: 5;
+grid-column-start: 2;
+grid-column-end: 5;
+}
+
+
+#grid-flex .grid-item{
+
+  }
+
+  #grid-flex .grid-item img {
+    width: 25%;
+}
+*/
+/*
+#grid-flex {
+    background: gray;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+  }
+  
+  #grid-flex .grid-item {
+    background: blue;
+    margin: 4px;
+    flex: 0 1 calc(20% - 8px);
+  }
+
+  */
+
+#grid-flex{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    text-align: center;
+    background-color: hotpink;
+}
+
+
+#grid-flex li:nth-child(1){
+width: 50%;
+}
+
+#grid-flex li:nth-child(n+2){
+  padding: 0px;
+  width: 25%;
+  height: auto;
+}
+#grid-flex li img:nth-child(n+2){
+  padding: 0px;
+  width: 25%;
+  height: auto;
+}
+/*
+#grid-flex .grid-item h3{
+    background: yellow;
+  padding: 0px;
+  width: 400px;
+  height: auto;
+
+  
+  
+  
+  text-align: center;   
+}
+
+#grid-flex .grid-item img{
+    background: gray;
+  padding: 0px;
+  width: 400px;
+  height: auto;  
+}
+
+#grid-flex .grid-item p{
+    background: blue;
+  padding: 0px;
+  width: 400px;
+  height: auto;
+
+  
+  
+  text-align: center;   
+}
+

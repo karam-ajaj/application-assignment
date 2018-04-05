@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+/* Reset and body styling*/
+*, *::after {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+  /*  background: radial-gradient(#fff,#ddd) fixed; */
+    max-width: 90%;
+    margin:0 auto;
+    background: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=650&w=940) no-repeat fixed;
+    background-size: cover;
+}
+    
+    /* inside grid items */
+h1, h2, h3, p {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+h1, h2{margin-top:50px;}
+h3 {
+    height: 50px;
+    padding:10px 0;
+    background:linear-gradient(to bottom, rgba(3,3,3,0.2), transparent);
+}
+p {padding:10px;word-spacing: 0.3em;}
+/*end of general styling*/ 
+
+    /* Grid container */
+#grid-floats::after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+/* styling ¨grid-item¨ class (only in the grid layout),
+couldn´t target the class like this ¨#grid-floats .grid-item¨
+so i used the parent id with the child tag */
+#grid-floats li {
+    background: linear-gradient(to top, rgba(3,3,3,0.2), transparent);
+    transform: scale(0.9);
+    transition: transform 300ms;
+    border: 1px #333;
+    border-style: solid dashed solid dashed;
+    float: left;
+    width: 25%;
+    height: 600px;
+}
+    
+li img  {
+    width: 70%;
+    transform: translate(20%);
+    margin-top: 10px;
+}
+
+/* desktop view */
+@media only screen and (min-width:769px) {
+    #grid-floats li:nth-child(1) {
+        background-color: rgba(169, 169, 40, 0.378);
+        width:50%;
+    }
+}
+/* tablet view */
+@media only screen and (max-width: 768px) {
+    #grid-floats li {width:33.3%;}
+    #grid-floats li:nth-child(1) {
+        background-color: rgba(169, 169, 40, 0.378);
+        width:50%;
+        height: 450px;
+        background: linear-gradient(to bottom right,rgba(135, 142, 8, 0.378),rgba(169, 169, 40, 0.378));
+        box-shadow: initial;
+    }
+    #grid-floats li:nth-child(2) {
+        background-color: rgba(169, 169, 40, 0.378);    
+        width: 50%;
+        height: 450px;
+    }
+}
+/* mobile view */
+@media only screen and (max-width: 480px) {
+    #grid-floats li {width:50%;}
+    #grid-floats li:nth-child(1) {width: 100%;}
+    #grid-floats li:nth-child(2) {
+        background-color:initial;
+        box-shadow: none;
+        height: 600px;
+    }    
+}
+   
+#grid-floats li:hover {
+    box-shadow: 0 5px 10px 0px #222;
+    transform: scale(1);
+}
+  
+    /* Flexbox container */
+#grid-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+/* flex items*/
+#grid-flex li {
+    max-width: 25%; /*every flex item will take quarter of the available width*/
+    flex-grow: 1;	
+    border: 1px #333;
+    border-style: solid dashed solid dashed;
+    background: linear-gradient(to top, rgba(3,3,3,0.2), transparent);
+    transform: scale(0.9);
+    transition: transform 300ms;
+}
+    
+/* desktop view */
+@media only screen and (min-width:769px) {
+    #grid-flex li:nth-child(1) {
+        background-color: rgba(169, 169, 40, 0.378);
+        max-width: 50%;
+    }
+    /* because i specified a max width of all flex items to 25%
+    i'm able to say here max-width is 50% which means that this item
+    will take twice the width of the other flex items */
+}
+/* tablet view */
+@media only screen and (max-width: 768px) {
+    #grid-flex li {max-width: 33.3%;} /* 100/3=33.3 */
+    #grid-flex li:nth-child(1) {
+        background-color: rgba(169, 169, 40, 0.378);
+        max-width: 50%;
+    }
+    #grid-flex li:nth-child(2) {
+        background-color: rgba(169, 169, 40, 0.378);
+        max-width: 50%;
+    }
+}
+/* mobile view */
+@media only screen and (max-width: 480px) {
+    #grid-flex li {max-width: 50%;} /* 100/2=50 */
+    #grid-flex li:nth-child(1) {max-width: 100%;}
+    #grid-flex li:nth-child(2) {background-color: initial;}
+}
+    
+#grid-flex li:hover {
+    box-shadow: 0 5px 10px 0px black;
+    transform: scale(1);
+}
+
+
+
+
+section:nth-child(1) {border-top: 2px dashed #333;}
+section:nth-child(2) {border-top: 2px dashed #333;}
+
+#grid-flex::after {
+    content: "Husam Lahm";
+    border-top: 1px solid #333;
+    text-shadow: 0px 2px 20px #575757;
+    text-align: center;
+    padding: 1em 0;
+    width: 100vw;
+}
+    
+    
+        /* Links that helped me */
+    /* 
+        A Complete Guide to Grid
+    https://css-tricks.com/snippets/css/complete-guide-grid/
+        Centering in CSS Grid
+    https://stackoverflow.com/questions/45536537/centering-in-css-grid
+    
+    
+        A Complete Guide to Flexbox
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+        Flexbox CSS In 20 Minutes (vid)
+    https://www.youtube.com/watch?v=JJSoEo8JSnc
+    
+    
+        Responsive Web Design - Media Queries
+    https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+    
+    
+        CSS border-style Property
+    https://www.w3schools.com/cssref/pr_border-style.asp
+    https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style
+    
+    
+        CSS Radial Gradient
+    https://css-tricks.com/snippets/css/css-radial-gradient/
+    
+    */
+
+    /* Redefining some rules and values (no major changes) */
+h1{color:rgb(5,5,5);margin-top:0; padding-top:25px;text-transform: uppercase;}
+h2{color: rgb(36, 34, 34);transform: scale(0.9);}
+h3{color: rgb(23, 23, 24);padding-top: 20px;}
+p{color: rgb(38, 38, 38);}
+li{border-radius: 0.4em;}
