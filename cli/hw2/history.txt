@@ -1,0 +1,14 @@
+  437  mkdir HW2
+  438  cd HW2
+  439  touch blank
+  440  for i in {1..5}; do echo "hello" >> greetings.txt; done
+  441  for i in {1..5}; do cp greetings.txt $i.txt; done
+  442  echo "cat" > pets.txt
+  443  echo "dog" >> pets.txt
+  444  echo "hamster" >> pets.txt
+  445  echo "cat" > commands.txt
+  446  echo "ls" >> commands.txt
+  447  echo "pwd" >> commands.txt
+  448  sort -u pets.txt commands.txt -o lovelycommands.txt
+  449  cat lovelycommands.txt 
+  450  history > history.txt
